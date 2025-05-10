@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { Jost } from 'next/font/google';
+
+const font = Jost({
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: 'HedCode',
@@ -13,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={font.className}>{children}</body>
     </html>
   );
 }
